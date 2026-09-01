@@ -35,8 +35,12 @@ form.addEventListener("submit", async (e) => {
     formData.append("Priority", "Medium");
 
     try {
+        const token = localStorage.getItem("token");
         const response = await fetch("/api/complaints", {
             method: "POST",
+            headers: {
+                "Authorization": token
+            },
             body: formData
         });
 

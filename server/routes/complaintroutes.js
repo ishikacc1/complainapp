@@ -8,25 +8,12 @@ const {
     getproblems
 } = require("../../controllers/complaintcontroller.js");
 
-Router.post("/", createproblem);
-Router.delete("/:id", deleteproblem);
-Router.get("/", getproblems);
-Router.put("/:id", updateproblem);
+const authMiddleware = require("../../middleware/authMiddleware.js");
+
+// All complaint routes require authentication
+Router.post("/", authMiddleware, createproblem);
+Router.delete("/:id", authMiddleware, deleteproblem);
+Router.get("/", authMiddleware, getproblems);
+Router.put("/:id", authMiddleware, updateproblem);
 
 module.exports = Router;
-
-
-
-
-/** 
-const authMiddleware = require("../../middleware/authMiddleware.js");
-const { validateExpense } = require("../../middleware/expenseValidation.js");
-const {createExpense , getExpenses, deleteExpense,updateExpense} = require("../../controllers/expensecontroller.js");
-Router.post("/", authMiddleware, validateExpense, createExpense);
-
-Router.get("/", authMiddleware, getExpenses);
-
-Router.delete("/:id", authMiddleware, deleteExpense);
-
-Router.put("/:id", authMiddleware, validateExpense, updateExpense);
-*/

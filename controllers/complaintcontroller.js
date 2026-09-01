@@ -22,7 +22,8 @@ try{
         Category: req.body.Category,
         Location: req.body.Location,
         Photo: req.body.Photo,
-        Priority: req.body.Priority
+        Priority: req.body.Priority,
+        user: req.user.userId
     });
     const savedproblem = await Problem.save();
     res.status(201).json({

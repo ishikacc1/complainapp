@@ -7,7 +7,12 @@ const complaintContainer = document.querySelector(".home");
 
 async function loadComplaints() {
     try {
-        const response = await fetch("/api/complaints");
+        const token = localStorage.getItem("token");
+        const response = await fetch("/api/complaints", {
+            headers: {
+                "Authorization": token
+            }
+        });
 
         const data = await response.json();
 
