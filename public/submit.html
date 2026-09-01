@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Complaint</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h2>Citizen Complaint Portal</h2>
+        <p>Government of India</p>
+    </header>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="submit.html">Submit Complaint</a>
+        <a href="index.html">Logout</a>
+    </nav>
+
+    <main class="form-container">
+
+        <h1>Submit a Complaint</h1>
+
+        <p>
+            Please provide the details of your complaint.
+        </p>
+
+        <form class="complaint-form">
+
+            <label>Complaint Title</label>
+            <input
+                type="text"
+                placeholder="Enter complaint title">
+
+            <label>Category</label>
+
+            <select>
+                <option>Select category</option>
+                <option>Road</option>
+                <option>Water</option>
+                <option>Electricity</option>
+                <option>Sanitation</option>
+                <option>Public Services</option>
+                <option>Other</option>
+            </select>
+
+            <label>Location</label>
+
+            <input
+                type="text"
+                placeholder="Enter location">
+
+            <label>Description</label>
+
+            <textarea
+                rows="6"
+                placeholder="Describe your complaint">
+            </textarea>
+
+            <label>Upload Image</label>
+
+            <input type="file">
+
+            <button type="submit">
+                Submit Complaint
+            </button>
+
+        </form>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Citizen Complaint Portal</p>
+    </footer>
+
+</body>
+</html>
