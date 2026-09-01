@@ -1,4 +1,5 @@
 /// 1
+console.log("LOGIN JS IS WORKING");
 const loginForm = document.querySelector("form");
 loginForm.addEventListener("submit", async (e) =>{
     e.preventDefault();
