@@ -17,14 +17,15 @@ try{
 const createproblem = async(req, res)=>{
 try{
     const Problem = new problem({
-        Title: req.body.Title,
-        Description: req.body.Description,
-        Category: req.body.Category,
-        Location: req.body.Location,
-        Photo: req.body.Photo,
-        Priority: req.body.Priority,
-        user: req.user.userId
-    });
+    Title: req.body.Title,
+    Description: req.body.Description,
+    Category: req.body.Category,
+    Location: req.body.Location,
+    Photo: req.file.filename,
+    Priority: req.body.Priority,
+    user: req.user.userId
+});
+   
     const savedproblem = await Problem.save();
     res.status(201).json({
         message: "problem submitted",
@@ -44,13 +45,14 @@ const  updateproblem = async(req, res)=>{
                 _id: req.params.id,
                 user: req.user.userId
             },
-            {
+            {  
             Title: req.body.Title,
             Description: req.body.Description,
             Category: req.body.Category,
             Location: req.body.Location,
-            Photo: req.body.Photo,
-            Priority: req.body.Priority
+            Photo: req.file.filename,
+            Priority: req.body.Priority,
+            user: req.user.userId
             },
             {
                 new: true
